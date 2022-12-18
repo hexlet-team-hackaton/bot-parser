@@ -1,0 +1,1 @@
+Словарь с данными: {category: None, firm: None, model: None}
