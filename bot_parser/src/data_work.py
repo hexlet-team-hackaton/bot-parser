@@ -1,7 +1,6 @@
 def get_category(user_request: dict) -> str:
     return user_request.get('category', None)
 
-
 def get_brand(user_request: dict) -> str:
     return user_request.get('brand', None)
 

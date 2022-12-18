@@ -1,6 +1,7 @@
 from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
+from bot_parser.handlers.keybords import get_category_button
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,7 +14,8 @@ class Condition(StatesGroup):
 
 
 async def get_category(message: types.Message):
-    await message.reply('Select category')
+    kb_client = get_category_button()
+    await message.reply('Select category', reply_markup=kb_client)
     await Condition.category.set()
 
 
@@ -33,6 +35,7 @@ async def get_user_request(message: types.Message, state: FSMContext):
     await state.update_data(model=message.text)
     data = await state.get_data()
     await message.reply(str(data))
+    await state.finish()
 
 
 def register_main_handlers(dp: Dispatcher):
