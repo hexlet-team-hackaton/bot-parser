@@ -1,1 +1,1 @@
-Словарь с данными: {category: None, brand: None, model: None}
+Словарь с данными: {category: None, firm: None, model: None}

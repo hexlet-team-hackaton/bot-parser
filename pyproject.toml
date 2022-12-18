@@ -3,6 +3,9 @@ name = "bot-parser"
 version = "0.1.0"
 description = ""
 authors = ["Mikhail Orlov <crazyminer398@gmail.com>"]
+packages = [
+  { include = "bot_parser" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
